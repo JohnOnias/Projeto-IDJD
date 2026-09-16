@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bpj2ij7weqnv5"]
+
+[ext_resource type="Script" uid="uid://cr2xy4wb2i3q6" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bwwhlsprrckb5" path="res://icon.svg" id="1_wtcfe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e48y"]
+radius = 77.0
+height = 180.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(12, 666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(1174, 5.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obaep"]
+size = Vector2(1185, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g04yl"]
+size = Vector2(13, 672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syjmg"]
+size = Vector2(216, 87)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g04yl"]
+
+[node name="Node2D" type="Node2D" unique_id=1009155632]
+
+[node name="CharacterBody2D (Principal)" type="CharacterBody2D" parent="." unique_id=466911048]
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D (Principal)" unique_id=529056652]
+position = Vector2(633, 332)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D (Principal)" unique_id=1622032637]
+position = Vector2(631, 333)
+shape = SubResource("CapsuleShape2D_0e48y")
+
+[node name="StaticBody2D (Paredes)" type="StaticBody2D" parent="." unique_id=1779946468]
+position = Vector2(-20, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (Paredes)" unique_id=1771528220]
+position = Vector2(1178, 292)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D (Paredes)" unique_id=589467898]
+position = Vector2(588, 653.875)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D (Paredes)" unique_id=361782413]
+position = Vector2(587.5, -42.5)
+shape = SubResource("RectangleShape2D_obaep")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D (Paredes)" unique_id=2087485786]
+position = Vector2(-3.5, 326)
+shape = SubResource("RectangleShape2D_g04yl")
+
+[node name="StaticBody2D (Mesa)" type="StaticBody2D" parent="." unique_id=422950480]
+position = Vector2(-20, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (Mesa)" unique_id=1135519040]
+position = Vector2(893, 109.5)
+shape = SubResource("RectangleShape2D_syjmg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D (Mesa)" unique_id=1512309100]
+position = Vector2(890.5, 110.75)
+scale = Vector2(209, -99.50001)
+texture = SubResource("CanvasTexture_g04yl")
