@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cr2xy4wb2i3q6" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://bwwhlsprrckb5" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://ffcwl01poaga" path="res://art/cassino_sala_interna(temporario).jpg" id="3_epypp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e48y"]
 radius = 77.0
@@ -34,7 +35,7 @@ position = Vector2(633, 332)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D (Principal)" unique_id=1622032637]
-position = Vector2(631, 333)
+position = Vector2(633, 333)
 shape = SubResource("CapsuleShape2D_0e48y")
 
 [node name="StaticBody2D (Paredes)" type="StaticBody2D" parent="." unique_id=1779946468]
@@ -60,10 +61,20 @@ shape = SubResource("RectangleShape2D_g04yl")
 position = Vector2(-20, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (Mesa)" unique_id=1135519040]
-position = Vector2(893, 109.5)
+position = Vector2(871, 298)
 shape = SubResource("RectangleShape2D_syjmg")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D (Mesa)" unique_id=1512309100]
-position = Vector2(890.5, 110.75)
-scale = Vector2(209, -99.50001)
+position = Vector2(872, 299)
+scale = Vector2(222.99998, -103)
 texture = SubResource("CanvasTexture_g04yl")
+
+[node name="StaticBody2D (Fundo)" type="StaticBody2D" parent="." unique_id=571247189]
+
+[node name="Sprite2D (Fundo Cassino)" type="Sprite2D" parent="StaticBody2D (Fundo)" unique_id=1398571746]
+z_index = -10
+position = Vector2(569, 331)
+scale = Vector2(0.610677, 0.6356481)
+texture = ExtResource("3_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (Fundo)" unique_id=680479057]
