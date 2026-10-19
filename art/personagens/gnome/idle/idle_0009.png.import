@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ffcwl01poaga"
-path="res://.godot/imported/cassino_sala_interna(temporario).jpg-db41b36f1ce22eff9a1f19519fa4fab6.ctex"
+uid="uid://bmtnkbehfivbt"
+path="res://.godot/imported/idle_0009.png-e99a18c04e8294df6ff4f77c20dc6cc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cassino_sala_interna(temporario).jpg"
-dest_files=["res://.godot/imported/cassino_sala_interna(temporario).jpg-db41b36f1ce22eff9a1f19519fa4fab6.ctex"]
+source_file="res://art/personagens/gnome/idle/idle_0009.png"
+dest_files=["res://.godot/imported/idle_0009.png-e99a18c04e8294df6ff4f77c20dc6cc3.ctex"]
 
 [params]
 
