@@ -34,15 +34,17 @@
 [ext_resource type="Texture2D" uid="uid://d3jreilm6pxaa" path="res://art/personagens/gnome/idle/idle_0013.png" id="31_xfyss"]
 [ext_resource type="Texture2D" uid="uid://bdod7jixpiq44" path="res://art/personagens/gnome/idle/idle_0014.png" id="32_3ngjr"]
 [ext_resource type="Texture2D" uid="uid://dnmpnd7ii33l1" path="res://art/personagens/gnome/idle/idle_0015.png" id="33_qilgh"]
+[ext_resource type="Script" uid="uid://b7iseygqn6gcv" path="res://player_1.gd" id="35_540hr"]
+[ext_resource type="Texture2D" uid="uid://bwwhlsprrckb5" path="res://icon.svg" id="35_cnnru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qygm3"]
-size = Vector2(8259, 20)
+size = Vector2(8255, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erack"]
-size = Vector2(153.9076, 177.2207)
+size = Vector2(154.51477, 97.08545)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sevk"]
-size = Vector2(299.99994, 196.6667)
+size = Vector2(190.00003, 158.33337)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1sevk"]
 animations = [{
@@ -153,36 +155,60 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvf33"]
+radius = 179.01117
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnnru"]
+size = Vector2(196.5, 185)
+
 [node name="Node2D" type="Node2D" unique_id=1009155632]
 
 [node name="colisores" type="StaticBody2D" parent="." unique_id=635363425]
 position = Vector2(4764.5, 406)
 
 [node name="paredeSuperior" type="CollisionShape2D" parent="colisores" unique_id=1503432628]
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_qygm3")
 
 [node name="pilarEsquerdo2" type="CollisionShape2D" parent="colisores" unique_id=1279153887]
-position = Vector2(-4118.5, 114)
+position = Vector2(-4099.847, 120.27478)
 rotation = -1.1763519
 scale = Vector2(0.99999994, 1)
-skew = 0.4101522
+skew = 0.41015208
 shape = SubResource("RectangleShape2D_erack")
 debug_color = Color(0.9536802, 0, 0.5548229, 0.41960785)
 
-[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=466911048]
+[node name="pilarDireito" type="CollisionShape2D" parent="colisores" unique_id=1821031208]
+position = Vector2(4068.5303, 110.69794)
+rotation = -1.1763519
+scale = Vector2(0.99999994, 1)
+skew = 0.41015208
+shape = SubResource("RectangleShape2D_erack")
+debug_color = Color(0.9536802, 0, 0.5548229, 0.41960785)
+
+[node name="Protagonista" type="CharacterBody2D" parent="." unique_id=466911048 groups=["npc_1"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonista" unique_id=568845097]
-position = Vector2(3776.6665, 1881.6666)
+position = Vector2(3776.6665, 1890.8333)
+shape = SubResource("RectangleShape2D_1sevk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Protagonista" unique_id=79878891]
+position = Vector2(4070, 1881.6666)
+shape = SubResource("RectangleShape2D_1sevk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Protagonista" unique_id=248871253]
+position = Vector2(3921.6665, 2130)
 shape = SubResource("RectangleShape2D_1sevk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonista" unique_id=1566290338]
-position = Vector2(3762.4998, 1619.9999)
+position = Vector2(3923.3333, 1710)
 sprite_frames = SubResource("SpriteFrames_1sevk")
 animation = &"down"
 
 [node name="Camera2D" type="Camera2D" parent="Protagonista/AnimatedSprite2D" unique_id=958282248]
+position = Vector2(-20, 83.33333)
 
 [node name="Background" type="TextureRect" parent="." unique_id=825821910]
 z_index = -137
@@ -192,3 +218,27 @@ mouse_filter = 2
 texture = ExtResource("3_epypp")
 stretch_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="npc_1" type="CharacterBody2D" parent="." unique_id=2134260914]
+position = Vector2(-916, 430)
+script = ExtResource("35_540hr")
+
+[node name="Sprite2D" type="Sprite2D" parent="npc_1" unique_id=1849962045]
+position = Vector2(2133, 608.0001)
+scale = Vector2(1.3515618, 1.3046874)
+texture = ExtResource("35_cnnru")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="npc_1" unique_id=158012017]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="npc_1/CanvasLayer" unique_id=1421471743]
+dialog_text = "Olá, jogador! Não vai me molestar?"
+
+[node name="Area2D" type="Area2D" parent="npc_1" unique_id=1156974547]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_1/Area2D" unique_id=1276924402]
+position = Vector2(2128, 615)
+shape = SubResource("CircleShape2D_xvf33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_1" unique_id=1415153259]
+position = Vector2(2135, 605)
+shape = SubResource("RectangleShape2D_cnnru")
